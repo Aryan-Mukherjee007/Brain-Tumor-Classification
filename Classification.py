@@ -57,7 +57,6 @@ train_generator = train_datagen.flow_from_directory(
     shuffle=True
 )
 
-#
 val_generator = train_datagen.flow_from_directory(
     train_dir,
     target_size=IMG_SIZE,
@@ -92,7 +91,7 @@ model = models.Sequential([
     layers.Flatten(),
     layers.Dense(512, activation='relu'),
     layers.Dropout(0.5),
-    layers.Dense(4, activation='softmax')  # 4 classes
+    layers.Dense(4, activation='softmax')
 ])
 
 #Compiling and summarizing model (for paper)
